@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'acceuil pour les emprunts de livre</title>
+
+</head>
+<body>
+    <h1>Bonjour quelle livres souhaitez rendre</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nom du livre </th>
+                <th scope="col">nom de l'autheur</th>
+                <th scope="col">nom de l'emprunt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($livre as $l): ?>
+                <tr>
+                    <td><?= $l['NameLivres'] ?></td>
+                    <td><?= $l['autheur'] ?></td>
+                    <td><?= $l['Name_Emprun'] ?></td>
+                    <td>
+                        <a href="delete.php?id=<?= $t['id_livre'] ?>" class="btn btn-danger">Delete</a>
+                        <a href="update.php?id=<?= $t['id_livre'] ?>" class="btn btn-warning">Update</a>    
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</body>
+</html>
+
